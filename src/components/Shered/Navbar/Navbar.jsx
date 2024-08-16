@@ -17,7 +17,7 @@ const Navbar = () => {
 
     const Links = (
         <>
-            <a href="#Top" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Home</a>
+            <NavLink to="/" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Home</NavLink>
             <a href="#products" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Products</a>
             <a href="#aboutUs" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">About Us</a>
             <a href="#contactUs" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Contact Us</a>

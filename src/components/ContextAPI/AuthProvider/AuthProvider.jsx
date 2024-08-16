@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-import app from "../../FirebaseConfig/FirebaseConfig";
 import axios from "axios";
+import app from "@/components/FirebaseConfig/FirebaseConfig";
 
 // export the AuthContext so that other components can use it
 export const AuthContext = createContext(null);
@@ -74,6 +74,7 @@ const AuthProvider = ({ children }) => {
             const userEmail = currentUser?.email || user?.email;
             const loggedUser = { email: userEmail };
             setUser(currentUser);
+            console.log(currentUser)
             // if user exist then issue a token
             if (currentUser) {
                 axios.post(`${import.meta.env.VITE_API_URL}/jwt`, loggedUser, { withCredentials: true })

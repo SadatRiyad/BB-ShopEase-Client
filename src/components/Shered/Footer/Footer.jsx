@@ -12,7 +12,7 @@ const Footer = () => {
                     <img src={logo} alt="Logo" className="w-60 mb-2" />
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 mt-2 text-white">
-                    <a href="#Top" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Home</a>
+                    <Link to="/" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Home</Link>
                     <a href="#products" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Products</a>
                     <a href="#aboutUs" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">About Us</a>
                     <a href="#contactUs" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Contact Us</a>
