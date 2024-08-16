@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../../assets/react.svg";
+import logo from "../../../assets/logo.png";
 import { FaLinkedin } from 'react-icons/fa6';
 import useAuth from "@/components/Hooks/useAuth/useAuth";
 
@@ -12,11 +12,11 @@ const Footer = () => {
                     <img src={logo} alt="Logo" className="w-60 mb-2" />
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 mt-2 text-white">
-                    <Link to="/" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Home</Link>
-                    <Link to="/products" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Products</Link>
-                    <Link to="/aboutUs" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">About Us</Link>
-                    <Link to="/contactUs" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Contact Us</Link>
-                    {user && <Link to="/dashboard" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Dashboard</Link>}
+                    <a href="#Top" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Home</a>
+                    <a href="#products" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Products</a>
+                    <a href="#aboutUs" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">About Us</a>
+                    <a href="#contactUs" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Contact Us</a>
+                    {/* {user && <Link to="/dashboard" className="hover:text-customBlue hover:font-semibold hover:-translate-y-[1px] transition-all duration-75">Dashboard</Link>} */}
                 </div>
 
                 <nav className="mt-8 text-white">

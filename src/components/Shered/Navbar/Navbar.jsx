@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../assets/react.svg";
+import logo from "../../../assets/logo.png";
 import "./Navbar.css";
 import useAuth from "../../Hooks/useAuth/useAuth";
 import { CircleUser, Menu } from "lucide-react";
@@ -17,11 +17,11 @@ const Navbar = () => {
 
     const Links = (
         <>
-            <NavLink to="/" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Home</NavLink>
-            <NavLink to="/products" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Products</NavLink>
-            <NavLink to="/aboutUs" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">About Us</NavLink>
-            <NavLink to="/contactUs" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Contact Us</NavLink>
-            {user && <NavLink to="/dashboard" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Dashboard</NavLink>}
+            <a href="#Top" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Home</a>
+            <a href="#products" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Products</a>
+            <a href="#aboutUs" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">About Us</a>
+            <a href="#contactUs" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Contact Us</a>
+            {/* {user && <NavLink to="/dashboard" className="hover:text-customBlue text-white font-medium focus:text-customBlue hover:bg-transparent transition-colors duration-75 mr-[1px] mb-[3px]">Dashboard</NavLink>} */}
         </>
     );
 
@@ -33,7 +33,7 @@ const Navbar = () => {
                         to="/"
                         className="flex w-2/4 items-center gap-2 text-lg font-semibold md:text-base"
                     >
-                        <img src={logo} alt="Logo" />
+                        <img src={logo} alt="Logo" className="w-20"/>
                     </Link>
                     <div className="flex justify-evenly w-full">
                         {Links}
@@ -58,7 +58,7 @@ const Navbar = () => {
                                 to="/"
                                 className="flex items-center gap-2 text-lg font-semibold"
                             >
-                                <img src={logo} alt="Logo" className="w-[80%]" />
+                                <img src={logo} alt="Logo" className="w-[45%] -ml-2" />
                             </Link>
                             {Links}
                         </nav>
