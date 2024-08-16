@@ -1,10 +1,18 @@
+import { Helmet } from 'react-helmet-async'
 import './App.css'
+import Hero from './components/Hero/Hero'
 
 function App() {
 
   return (
     <>
-      <h1>BB-ShopEase-Client</h1>
+      <div className='bg-base-300'>
+        <Helmet>
+          <title>Home | BB-ShopEase</title>
+        </Helmet>
+        <Hero></Hero>
+
+      </div>
     </>
   )
 }
