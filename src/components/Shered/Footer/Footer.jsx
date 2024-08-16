@@ -6,7 +6,7 @@ import useAuth from "@/components/Hooks/useAuth/useAuth";
 const Footer = () => {
     const { user } = useAuth();
     return (
-        <footer className="bg-customGulabi text-muted-foreground py-10 text-white">
+        <footer className="bg-customGulabi text-muted-foreground mt-4 py-10 text-white">
             <div className="container mx-auto text-center justify-center w-full flex flex-col items-center">
                 <div className="flex flex-col items-center w-full">
                     <img src={logo} alt="Logo" className="w-60 mb-2" />

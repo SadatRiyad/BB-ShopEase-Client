@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import './App.css'
 import Hero from './components/Hero/Hero'
+import Products from './components/Products/Products'
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
           <title>Home | BB-ShopEase</title>
         </Helmet>
         <Hero></Hero>
-
+        <Products></Products>
       </div>
     </>
   )
