@@ -12,7 +12,7 @@ const Hero = () => {
                             <span>We have a wide range of products to choose from...</span>
                         </p>
                         <a href="#products" className="text-xs px-6 py-3 bg-customRed border-customRed text-white hover:text-customRed rounded border hover:border-customRed hover:bg-white opacity-90 font-bold mt-6 md:text-base">See All Products</a>
-                        <a href='#contactUs' className="text-xs px-6 py-3 ml-4 bg-customBlue border-customBlue text-white hover:text-customBlue border hover:bg-white rounded hover:border-customBlue opacity-90 font-bold mt-6 md:text-base">About Us</a>
+                        <a href='#aboutUs' className="text-xs px-6 py-3 ml-4 bg-customBlue border-customBlue text-white hover:text-customBlue border hover:bg-white rounded hover:border-customBlue opacity-90 font-bold mt-6 md:text-base">About Us</a>
                     </div>
                 </div>
             </div>
