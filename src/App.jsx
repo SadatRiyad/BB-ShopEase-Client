@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import './App.css'
 import Hero from './components/Hero/Hero'
 import Products from './components/Products/Products'
+import AboutUs from './components/AboutUs/AboutUs'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         </Helmet>
         <Hero></Hero>
         <Products></Products>
+        <AboutUs></AboutUs>
       </div>
     </>
   )

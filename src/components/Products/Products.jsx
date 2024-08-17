@@ -24,7 +24,7 @@ const Products = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [sortOption, setSortOption] = useState('dateAddedDesc');
 
-    const resultsPerPage = 9;
+    const resultsPerPage = 12;
 
     useEffect(() => {
         // Filtering and sorting products based on criteria
