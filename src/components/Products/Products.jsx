@@ -75,7 +75,7 @@ const Products = () => {
             setSelectedCategory(value);
         } else if (name === 'brand') {
             setSelectedBrand(value);
-        } 
+        }
         setCurrentPage(1); // Reset to first page
     };
 
@@ -95,140 +95,156 @@ const Products = () => {
     }
 
     const totalPages = Math.ceil(filteredProducts.length / resultsPerPage);
+    // console.log(currentPage, totalPages)
 
     return (
-        <div id='products' className="grid pt-12 bg-slate-100 container mx-auto px-4 min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+        <>
             <Helmet>
                 <title>Products | BB-ShopEase</title>
             </Helmet>
-
-            <div className="flex h-full max-h-screen flex-col pt-6 gap-2 md:pr-4">
-                <h2 className="text-4xl font-bold mb-2 mt-4 md:mt-0">Filters</h2>
-
-                <div className="mb-4 border-2 border-customGulabi p-2 px-4 bg-slate-200">
-                    <div className='justify-between flex items-center mb-0'>
-                        <label className="block mb-1px font-medium">Price Range: {priceRange[0]} {priceRange1[1] ? '-' : ""} {priceRange[1]}</label>
-                        <Button
-                            onClick={() => {
-                                setPriceRange([1, 4999]);
-                                setPriceRange1([1, 4999]);
-                            }}
-                            className="bg-customGulabi m-0 text-white py-0 rounded-full text-xs"
-                        >Reset</Button>
-                    </div>
-                    <input
-                        type="range"
-                        name="priceRange"
-                        min="1"
-                        max="4999"
-                        value={priceRange.join(',')}
-                        onChange={handleFilterChange}
-                        className="w-full custom-range"
-                        multiple
-                    />
-                    <div className="flex justify-between">
-                        <span>$1</span>
-                        <span>$4999</span>
-                    </div>
-                </div>
-
-                <div className="mb-4 border-2 border-customGulabi p-2 px-4 bg-slate-200">
-                    <label className="block mb-2 font-medium">Category:</label>
-                    <select name="category" value={selectedCategory} onChange={handleFilterChange} className="w-full border-2 border-customGulabi p-2 rounded-full">
-                        <option value="">All</option>
-                        <option value="Televisions">Televisions</option>
-                        <option value="Laptops">Laptops</option>
-                        <option value="Accessories">Accessories</option>
-                        <option value="Audio">Audio</option>
-                        <option value="Home">Home</option>
-                        {/* Add more categories as needed */}
-                    </select>
-                </div>
-
-                <div className="mb-4 border-2 border-customGulabi p-2 px-4 bg-slate-200">
-                    <label className="block mb-2 font-medium">Brand:</label>
-                    <select name="brand" value={selectedBrand} onChange={handleFilterChange} className="w-full border-2 border-customGulabi p-2 rounded-full">
-                        <option value="">All</option>
-                        <option value="Apple">Apple</option>
-                        <option value="Samsung">Samsung</option>
-                        <option value="Sony">Sony</option>
-                        <option value="Bose">Bose</option>
-                        <option value="HyperX">HyperX</option>
-                        {/* Add more brands as needed */}
-                    </select>
-                </div>
-
-                <div className="mb-4 border-2 border-customGulabi p-2 px-4 bg-slate-200">
-                    <label className="block mb-2 font-medium">Sort By:</label>
-                    <select value={sortOption} onChange={handleSortChange} className="w-full border-2 border-customGulabi p-2 rounded-full">
-                        <option value="dateAddedDesc">Date Added: Newest First</option>
-                        <option value="dateAddedAsc">Date Added: Oldest First</option>
-                        <option value="priceLowHigh">Price: Low to High</option>
-                        <option value="priceHighLow">Price: High to Low</option>
-                    </select>
-                </div>
-
+            <div id='products' className="flex pt-16 flex-col items-center justify-center w-full text-white py-6 bg-customBlue">
+                <h1 className="text-4xl font-bold mb-2">Products</h1>
+                <p className="text-lg text-center">Find the best products at the best prices</p>
             </div>
+            <div className="grid pt-2 bg-slate-100 container mx-auto px-4 min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
 
-            <div className="w-full h-fit pt-6 md:pl-5 md:border-l-4 min-h-dvh">
-                <div className='grid w-full grid-cols-1 md:grid-cols-2 text-center md:text-left items-center'>
-                    <div className='w-full flex justify-between'>
-                        <h2 className="text-2xl font-bold mb-2 md:mb-5">Total Products: <span className='text-customGulabi'>{products.length}</span></h2>
-                        <h2 className="text-2xl font-bold mb-2 md:mb-5 ml-4">Products Found: <span className='text-customGulabi'>{filteredProducts.length}</span></h2>
+                <div className="flex h-full max-h-screen flex-col pt-6 gap-2 md:pr-4">
+                    <h2 className="text-4xl font-bold mb-2 mt-4 md:mt-0">Filters</h2>
+
+                    <div className="mb-4 border-2 border-customGulabi p-2 px-4 bg-slate-200">
+                        <div className='justify-between flex items-center mb-0'>
+                            <label className="block mb-1px font-medium">Price Range: {priceRange[0]} {priceRange1[1] ? '-' : ""} {priceRange[1]}</label>
+                            <Button
+                                onClick={() => {
+                                    setPriceRange([1, 4999]);
+                                    setPriceRange1([1, 4999]);
+                                }}
+                                className="bg-customGulabi m-0 text-white py-0 rounded-full text-xs"
+                            >Reset</Button>
+                        </div>
+                        <input
+                            type="range"
+                            name="priceRange"
+                            min="1"
+                            max="4999"
+                            value={priceRange.join(',')}
+                            onChange={handleFilterChange}
+                            className="w-full custom-range"
+                            multiple
+                        />
+                        <div className="flex justify-between">
+                            <span>$1</span>
+                            <span>$4999</span>
+                        </div>
                     </div>
-                    <div className="w-full flex-1">
-                        <form>
-                            <div className="relative justify-end items-end flex mb-8 md:mb-5">
-                                <Search className="absolute right-3.5 top-[14px] h-4 w-4 text-muted-foreground" />
-                                <input
-                                    type="search"
-                                    placeholder="Search by Product Name"
-                                    className="w-full border-2 p-2 rounded-full border-customGulabi  appearance-none bg-background pr-8 pl-4 shadow-none md:w-fit lg:w-2/3"
-                                    onChange={handleSearch}
-                                />
-                            </div>
-                        </form>
+
+                    <div className="mb-4 border-2 border-customGulabi p-2 px-4 bg-slate-200">
+                        <label className="block mb-2 font-medium">Category:</label>
+                        <select name="category" value={selectedCategory} onChange={handleFilterChange} className="w-full border-2 border-customGulabi p-2 rounded-full">
+                            <option value="">All</option>
+                            <option value="Televisions">Televisions</option>
+                            <option value="Laptops">Laptops</option>
+                            <option value="Smartphones">Smartphones</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Audio">Audio</option>
+                            <option value="Home">Home</option>
+                            {/* Add more categories as needed */}
+                        </select>
                     </div>
+
+                    <div className="mb-4 border-2 border-customGulabi p-2 px-4 bg-slate-200">
+                        <label className="block mb-2 font-medium">Brand:</label>
+                        <select name="brand" value={selectedBrand} onChange={handleFilterChange} className="w-full border-2 border-customGulabi p-2 rounded-full">
+                            <option value="">All</option>
+                            <option value="Apple">Apple</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Sony">Sony</option>
+                            <option value="Bose">Bose</option>
+                            <option value="HyperX">HyperX</option>
+                            {/* Add more brands as needed */}
+                        </select>
+                    </div>
+
+                    <div className="mb-4 border-2 border-customGulabi p-2 px-4 bg-slate-200">
+                        <label className="block mb-2 font-medium">Sort By:</label>
+                        <select value={sortOption} onChange={handleSortChange} className="w-full border-2 border-customGulabi p-2 rounded-full">
+                            <option value="dateAddedDesc">Date Added: Newest First</option>
+                            <option value="dateAddedAsc">Date Added: Oldest First</option>
+                            <option value="priceLowHigh">Price: Low to High</option>
+                            <option value="priceHighLow">Price: High to Low</option>
+                        </select>
+                    </div>
+
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    {currentProducts.map(product => (
-                        <ProductCard key={product._id} product={product} />
-                    ))}
-                </div>
+                <div className="w-full h-fit pt-6 md:pl-5 md:border-l-4 min-h-dvh">
+                    <div className='grid w-full grid-cols-1 md:grid-cols-2 text-center md:text-left items-center'>
+                        <div className='w-full flex justify-between'>
+                            <h2 className="text-2xl font-bold mb-2 md:mb-5">Total Products: <span className='text-customGulabi'>{products.length}</span></h2>
+                            <h2 className="text-2xl font-bold mb-2 md:mb-5 ml-4">Products Found: <span className='text-customGulabi'>{filteredProducts.length}</span></h2>
+                        </div>
+                        <div className="w-full flex-1">
+                            <form>
+                                <div className="relative justify-end items-end flex mb-8 md:mb-5">
+                                    <Search className="absolute right-3.5 top-[14px] h-4 w-4 text-muted-foreground" />
+                                    <input
+                                        type="search"
+                                        placeholder="Search by Product Name"
+                                        className="w-full border-2 p-2 rounded-full border-customGulabi  appearance-none bg-background pr-8 pl-4 shadow-none md:w-fit lg:w-2/3"
+                                        onChange={handleSearch}
+                                    />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
-                {totalPages > 1 && (
-                    <Pagination className="my-8 w-fit text-white rounded-lg">
-                        <PaginationContent>
-                            <PaginationItem>
-                                <PaginationPrevious
-                                    onClick={() => handlePageChange(currentPage - 1)}
-                                    disabled={currentPage === 1}
-                                    className="bg-customBlue border border-customBlue cursor-pointer"
-                                />
-                            </PaginationItem>
-                            {Array.from({ length: totalPages }, (_, index) => (
-                                <PaginationItem key={index}>
-                                    <PaginationLink
-                                        onClick={() => handlePageChange(index + 1)}
-                                        className={currentPage === index + 1 ? 'pagination-link active border border-customBlue cursor-not-allowed' : 'pagination-link border border-customBlue bg-customBlue text-white cursor-pointer'}
-                                    >
-                                        {index + 1}
-                                    </PaginationLink>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        {/* after map if found product then show otherwise show 'No Products Found' */}
+                        {currentProducts.length > 0 ? currentProducts.map(product => (
+                            <ProductCard key={product._id} product={product} />
+                        )) : <div className="text-2xl font-bold text-customRed text-left">No Products Found!</div>}
+                    </div>
+
+                    {totalPages > 1 && (
+                        <Pagination className="my-8 w-fit text-white rounded-lg">
+                            <PaginationContent>
+                                <PaginationItem>
+                                    <PaginationPrevious
+                                        onClick={() => {
+                                            if (currentPage > 1) handlePageChange(currentPage - 1);
+                                        }}
+                                        disabled={currentPage === 1}
+                                        className={`bg-customBlue pl-1 pr-2 md:pl-3 md:pr-4 text-xs border border-customBlue ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`}
+                                    />
                                 </PaginationItem>
-                            ))}
-                            <PaginationItem>
-                                <PaginationNext
-                                    onClick={() => handlePageChange(currentPage + 1)}
-                                    disabled={currentPage === totalPages}
-                                    className="bg-customBlue border border-customBlue cursor-pointer"
-                                />
-                            </PaginationItem>
-                        </PaginationContent>
-                    </Pagination>
-                )}
+                                {Array.from({ length: totalPages }, (_, index) => (
+                                    <PaginationItem key={index}>
+                                        <PaginationLink
+                                            onClick={() => {
+                                                if (currentPage !== index + 1) handlePageChange(index + 1);
+                                            }}
+                                            className={currentPage === index + 1 ? 'pagination-link p-1 md:pl-4 md:pr-4 active text-xs border border-customBlue cursor-not-allowed opacity-50' : 'pagination-link p-1 md:pl-4 md:pr-4 border text-xs border-customBlue bg-customBlue text-white cursor-pointer'}
+                                        >
+                                            {index + 1}
+                                        </PaginationLink>
+                                    </PaginationItem>
+                                ))}
+                                <PaginationItem>
+                                    <PaginationNext
+                                        onClick={() => {
+                                            if (currentPage < totalPages) handlePageChange(currentPage + 1);
+                                        }}
+                                        disabled={currentPage === totalPages}
+                                        className={`bg-customBlue pl-2 pr-1 md:pl-4 md:pr-3 text-xs border border-customBlue ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`}
+                                    />
+                                </PaginationItem>
+                            </PaginationContent>
+                        </Pagination>
+                    )}
+
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
